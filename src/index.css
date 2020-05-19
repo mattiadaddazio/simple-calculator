@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.calculator {
+  width: 232px;
+  height: 405px;
+  padding: 8px;
+  margin: 1rem auto;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin-top: 20vh;
+}
+
+.display {
+  width: 100%;
+  height: 25px;
+  background-color: black;
+  color: white;
+  text-align: right;
+  border: none;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.preview {
+  width: 100%;
+  height: 25px;
+  color: grey;
+  text-align: right;
+  margin: 0px;
+}
+
+.calculatorBody button {
+  width: 50px;
+  height: 50px;
+  margin: 1px;
+  padding: 0px;
+  border: 1px solid white;
+  border-radius: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+}
+
+button.functional {
+  color: rgb(0, 119, 255);
+}
+
+button.result {
+  color: orangered;
+}
+
+.delete {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+hr {
+  width: auto;
+  border: 0.5px solid white;
+  margin: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+}
