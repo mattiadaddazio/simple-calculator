@@ -6,6 +6,7 @@ import {
   lastNumberIndex,
   hasDecimalPoint,
   isSymbol,
+  isNumber,
   countOpenBrackets,
 } from "../utils/calculatorUtils";
 
@@ -13,11 +14,19 @@ class Calculator extends Component {
   state = {
     exp: "",
     hasError: false,
+    isResult: false,
   };
 
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyPress);
   }
+
+  handleKeyPress = ({ key }) => {
+    if (key === "c") this.handleClear();
+    else if (key === "Backspace") this.handleDelete();
+    else if (key === "Enter") this.handleCalculation();
+    else if ("1234567890,+-/*^".includes(key)) this.handleAppend(key);
+  };
 
   handleAppend = (button) => {
     let { exp } = this.state;
@@ -28,14 +37,10 @@ class Calculator extends Component {
     const lastChar = exp.charAt(exp.length - 1);
     if (isSymbol(button) && isSymbol(lastChar)) exp = exp.slice(0, -1);
 
-    this.setState({ exp: exp + button, hasError: false });
-  };
+    if (this.state.isResult && isNumber(button))
+      return this.setState({ exp: button, hasError: false, isResult: false });
 
-  handleKeyPress = ({ key }) => {
-    if (key === "c") this.handleClear();
-    else if (key === "Backspace") this.handleDelete();
-    else if (key === "Enter") this.handleCalculation();
-    else if ("1234567890,+-/*^".includes(key)) this.handleAppend(key);
+    this.setState({ exp: exp + button, hasError: false, isResult: false });
   };
 
   handleBrackets = () => {
@@ -48,7 +53,7 @@ class Calculator extends Component {
     else if (countOpenBrackets(exp) === 0) exp += "*(";
     else exp += ")";
 
-    this.setState({ exp, hasError: false });
+    this.setState({ exp, hasError: false, isResult: false });
   };
 
   handleSignChange = () => {
@@ -57,13 +62,14 @@ class Calculator extends Component {
     if (!exp || lastNumberIndex(exp) > 1) return;
 
     const newExp = exp[0] === "-" ? exp.slice(1) : `-${exp}`;
-    this.setState({ exp: newExp, hasError: false });
+    this.setState({ exp: newExp, hasError: false, isResult: false });
   };
 
   handleCalculation = () => {
     try {
       this.setState({
         exp: evaluate(this.state.exp).toString(),
+        isResult: true,
       });
     } catch (error) {
       return this.setState({ hasError: true });
@@ -72,28 +78,35 @@ class Calculator extends Component {
 
   partialResult = () => {
     try {
-      return evaluate(this.state.exp).toString();
+      const partialResult = evaluate(this.state.exp).toString();
+      return partialResult.includes("e") && this.state.isResult
+        ? ""
+        : partialResult;
     } catch (error) {
       return this.state.hasError ? "Invalid syntax" : "";
     }
   };
 
   handleClear = () => {
-    this.setState({ exp: "", hasError: false });
+    this.setState({ exp: "", hasError: false, isResult: false });
   };
 
   handleDelete = () => {
-    this.setState({ exp: this.state.exp.slice(0, -1), hasError: false });
+    this.setState({
+      exp: this.state.exp.slice(0, -1),
+      hasError: false,
+      isResult: false,
+    });
   };
 
   render() {
+    const { exp } = this.state;
+
     return (
       <main className="calculator">
         <Display
-          content={this.state.exp}
-          partialResult={
-            lastNumberIndex(this.state.exp) > 0 ? this.partialResult() : ""
-          }
+          content={exp}
+          partialResult={lastNumberIndex(exp) > 0 ? this.partialResult() : ""}
         />
         <CalculatorBody
           onAppend={this.handleAppend}

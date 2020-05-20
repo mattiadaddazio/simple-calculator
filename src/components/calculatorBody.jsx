@@ -14,7 +14,7 @@ const CalculatorBody = (props) => {
   return (
     <table className="calculatorBody">
       <thead>
-        <tr>
+        <tr className="menu">
           <td></td>
           <td></td>
           <td></td>
@@ -108,7 +108,7 @@ const CalculatorBody = (props) => {
         <tr>
           <td>
             <button
-              className="functional font-weight-bold pb-1"
+              className="functional font-weight-bold"
               onClick={onSignChange}
             >
               +/-

@@ -1,29 +1,25 @@
 body {
   margin: 0;
-  width: 100%;
-  height: 100%;
   background-color: black;
-  font-family: "Balsamiq Sans", cursive;
 }
 
 .calculator {
-  height: 83vh;
-  width: 47vh;
-  padding: 2vh;
-  margin: 3vh auto;
+  width: 232px;
+  height: 405px;
+  padding: 8px;
+  margin: 1rem auto;
   border: 1px solid white;
-  border-radius: 3vh;
+  border-radius: 0.5rem;
+  margin-top: 20vh;
 }
 
 .display {
   width: 100%;
-  height: 7vh;
-  border: none;
-  padding: 1vh;
+  height: 25px;
   background-color: black;
   color: white;
   text-align: right;
-  font-size: 4vh;
+  border: none;
   resize: none;
   outline: none;
   overflow: hidden;
@@ -31,25 +27,22 @@ body {
 
 .preview {
   width: 100%;
-  height: 7vh;
-  margin: 0px;
-  padding: 1vh;
+  height: 25px;
   color: grey;
-  font-size: 4vh;
   text-align: right;
-  overflow: hidden;
+  margin: 0px;
 }
 
 .calculatorBody button {
-  width: 10vh;
-  height: 10vh;
-  margin: 2px;
+  width: 50px;
+  height: 50px;
+  margin: 1px;
   padding: 0px;
   border: 1px solid white;
-  border-radius: 4vh;
+  border-radius: 2rem;
   background-color: black;
   color: white;
-  font-size: 4vh;
+  font-size: 1.2rem;
 }
 
 button.functional {
@@ -57,21 +50,19 @@ button.functional {
 }
 
 button.result {
-  background-color: rgb(0, 119, 255);
-  border-color: rgb(0, 119, 255);
-  color: white;
+  color: orangered;
 }
 
 .delete {
   color: white;
-  font-size: 4vh;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 hr {
   width: auto;
   border: 0.5px solid white;
-  margin: 2vh;
+  margin: 10px;
 }
 
 .clickable {
