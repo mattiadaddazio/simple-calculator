@@ -31,7 +31,7 @@ export function countOpenBrackets(exp) {
 }
 
 export function translate(exp) {
-  return exp.replace("*", "x").replace("/", "÷").replace(".", ",");
+  return exp.replace(/\*/g, "x").replace(/\./g, ",").replace(/\//g, "÷");
 }
 
 export function calculateFontSize(exp, length) {
