@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/simple-calculator/static/css/main.b8ea574a.chunk.css",
-    "main.js": "/simple-calculator/static/js/main.8b148a8e.chunk.js",
-    "main.js.map": "/simple-calculator/static/js/main.8b148a8e.chunk.js.map",
+    "main.css": "/simple-calculator/static/css/main.c5125513.chunk.css",
+    "main.js": "/simple-calculator/static/js/main.bc21b2bf.chunk.js",
+    "main.js.map": "/simple-calculator/static/js/main.bc21b2bf.chunk.js.map",
     "runtime-main.js": "/simple-calculator/static/js/runtime-main.dd4b4cde.js",
     "runtime-main.js.map": "/simple-calculator/static/js/runtime-main.dd4b4cde.js.map",
     "static/css/2.829c9cb5.chunk.css": "/simple-calculator/static/css/2.829c9cb5.chunk.css",
     "static/js/2.abc42593.chunk.js": "/simple-calculator/static/js/2.abc42593.chunk.js",
     "static/js/2.abc42593.chunk.js.map": "/simple-calculator/static/js/2.abc42593.chunk.js.map",
     "index.html": "/simple-calculator/index.html",
-    "precache-manifest.27863397ed94b77335363cbc4f1a4d05.js": "/simple-calculator/precache-manifest.27863397ed94b77335363cbc4f1a4d05.js",
+    "precache-manifest.f5edc50c88aaab740ea69fbe5c1d74fa.js": "/simple-calculator/precache-manifest.f5edc50c88aaab740ea69fbe5c1d74fa.js",
     "service-worker.js": "/simple-calculator/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/simple-calculator/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.b8ea574a.chunk.css.map": "/simple-calculator/static/css/main.b8ea574a.chunk.css.map",
+    "static/css/main.c5125513.chunk.css.map": "/simple-calculator/static/css/main.c5125513.chunk.css.map",
     "static/js/2.abc42593.chunk.js.LICENSE.txt": "/simple-calculator/static/js/2.abc42593.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dd4b4cde.js",
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.abc42593.chunk.js",
-    "static/css/main.b8ea574a.chunk.css",
-    "static/js/main.8b148a8e.chunk.js"
+    "static/css/main.c5125513.chunk.css",
+    "static/js/main.bc21b2bf.chunk.js"
   ]
 }
