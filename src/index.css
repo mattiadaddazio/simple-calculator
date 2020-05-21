@@ -50,6 +50,7 @@ body {
   background-color: black;
   color: white;
   font-size: 4vh;
+  outline: none;
 }
 
 button.functional {

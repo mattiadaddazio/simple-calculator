@@ -34,6 +34,6 @@ export function translate(exp) {
   return exp.replace(/\*/g, "x").replace(/\./g, ",").replace(/\//g, "÷");
 }
 
-export function calculateFontSize(exp, length) {
+export function calculateFontSize({ length }) {
   return length > 15 ? "2.5vh" : "4vh";
 }

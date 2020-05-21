@@ -5,7 +5,7 @@ const Display = ({ content, partialResult }) => {
   return (
     <div>
       <textarea
-        style={{ fontSize: calculateFontSize(content, content.length) }}
+        style={{ fontSize: calculateFontSize(content) }}
         readOnly
         className="display"
         value={translate(content)}
@@ -13,7 +13,7 @@ const Display = ({ content, partialResult }) => {
       />
       <p
         style={{
-          fontSize: calculateFontSize(partialResult, partialResult.length),
+          fontSize: calculateFontSize(partialResult),
         }}
         className="preview"
       >

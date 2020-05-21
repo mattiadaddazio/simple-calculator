@@ -30,11 +30,12 @@ class Calculator extends Component {
 
   handleAppend = (button) => {
     let { exp } = this.state;
+    const lastChar = exp.charAt(exp.length - 1);
 
     if (button === "." && hasDecimalPoint(exp)) return;
-    if ((!exp || exp === "-") && "+*/^".includes(button)) return;
+    if ((!exp || exp === "-" || lastChar === "(") && "+*/^".includes(button))
+      return;
 
-    const lastChar = exp.charAt(exp.length - 1);
     if (isSymbol(button) && isSymbol(lastChar)) exp = exp.slice(0, -1);
 
     if (this.state.isResult && isNumber(button))
